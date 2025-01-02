@@ -2,22 +2,14 @@ name = "cf-counter"
 main = "src/index.ts"
 compatibility_date = "2025-01-02"
 
-[[durable_objects.bindings]]
-name = "COUNTERS"
-class_name = "Counter"
-
-[[migrations]]
-tag = "v1" # Should be unique for each entry
-new_classes = ["Counter"]
-
 # compatibility_flags = [ "nodejs_compat" ]
 
 # [vars]
 # MY_VAR = "my-variable"
 
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "COUNT"
+id = "2bc0c99920524584b35784c66250a827"
 
 # [[r2_buckets]]
 # binding = "MY_BUCKET"

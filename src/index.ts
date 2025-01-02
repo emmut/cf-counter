@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { createMiddleware } from "hono/factory";
-import { Counter } from "./lib/counter";
 
 type Env = {
   Bindings: {
@@ -25,7 +24,7 @@ const kvnamespaceMiddleware = createMiddleware<Env>(async (c, next) => {
   c.set("name", name);
   await next();
 
-  c.res = c.text(`Count: ${c.var.count}`);
+  c.res = c.text(`KV name ${name} count: ${c.var.count}`);
 });
 
 app.get("/", kvnamespaceMiddleware, async (c, next) => {
